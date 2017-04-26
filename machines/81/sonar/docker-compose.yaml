@@ -1,0 +1,28 @@
+version: '2'
+services:
+  sonarqube:
+    ports:
+      - "9000:9000"
+      - "9092:9092"
+    restart: always
+    environment:
+      - SONARQUBE_JDBC_USERNAME=sonar
+      - SONARQUBE_JDBC_PASSWORD=sonar
+      - SONARQUBE_JDBC_URL=jdbc:mysql://192.168.33.47:9918/sonar?useUnicode=true&&characterEncoding=utf8
+    image: sonarqube:6.3
+    container_name: sonarqube
+  sonarqube-mysql:
+    ports:
+      - "9918:3306"
+    restart: always
+    volumes:
+      - ./volumes/mysql:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=sonar
+      - MYSQL_USER=sonar
+      - MYSQL_PASSWORD=sonar  
+    command: [mysqld, --character-set-server=utf8mb4, --collation-server=utf8mb4_unicode_ci]
+    image: mysql:5.7.16
+    container_name: sonarqube-mysqls
+    
