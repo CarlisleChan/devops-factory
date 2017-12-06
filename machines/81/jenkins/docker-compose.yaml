@@ -1,10 +1,12 @@
 version: '2'
 services:
   jenkins:
+    container_name: jenkins
+    image: jenkins:2.46.1
     ports:
       - "9393:8080"
     restart: always
     volumes:
-      - ./volumes/jenkins:/var/jenkins_home
-    image: jenkins:2.46.1
-    container_name: jenkins
+      - ./var/jenkins:/var/jenkins_home
+      - ./var/android/sdk:/var/android/sdk
+      - ./var/android/ndk:/var/android/ndk

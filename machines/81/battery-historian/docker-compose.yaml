@@ -1,0 +1,8 @@
+version: '2'
+services:
+  battery-historian:
+    container_name: battery-historian
+    image: blystad/battery-historian
+    ports:
+      - "9999:9999"
+    restart: always
