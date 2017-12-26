@@ -7,7 +7,7 @@ mysql:
       - "9494:3306"
     restart: always
     volumes:
-      - ./var/lib/mysql:/var/lib/mysql
+      - ./data/var/lib/mysql:/var/lib/mysql
     environment:
       - MYSQL_DATABASE=sonarqube
       - MYSQL_ROOT_PASSWORD=8jnYxnPlIAzP
@@ -21,7 +21,7 @@ mysql:
       - "9595:9000"
     restart: always
     volumes:
-      - ./var/lib/sonarqube:/var/lib/postgresql
+      - ./data/var/lib/sonarqube:/var/lib/postgresql
     environment:
       - SONARQUBE_JDBC_USERNAME=root
       - SONARQUBE_JDBC_PASSWORD=8jnYxnPlIAzP

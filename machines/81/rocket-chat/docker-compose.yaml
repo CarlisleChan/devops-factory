@@ -5,7 +5,7 @@ services:
     image: rocketchat/rocket.chat:latest
     restart: unless-stopped
     volumes:
-      - ./uploads:/app/uploads
+      - ./data/uploads:/app/uploads
     environment:
       - PORT=3000
       - ROOT_URL=http://localhost:3000
@@ -57,7 +57,7 @@ services:
     labels:
       - "traefik.enable=false"
     volumes:
-      - ./scripts:/home/hubot/scripts
+      - ./data/scripts:/home/hubot/scripts
   # this is used to expose the hubot port for notifications on the host on port 3001, e.g. for hubot-jenkins-notifier
     ports:
       - 3001:8080
