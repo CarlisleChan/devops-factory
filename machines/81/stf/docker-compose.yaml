@@ -3,6 +3,10 @@ services:
   rethinkdb:
     container_name: rethinkdb
     image: rethinkdb:2.3
+    ports:
+      - "8080:8080"
+      - "28015:28015"
+      - "29015:29015"
     restart: always
     volumes:
       - ./data/srv/rethinkdb:/data
@@ -11,6 +15,8 @@ services:
   adbd:
     container_name: adbd
     image: sorccu/adb
+    ports:
+      - "5037:5037"
     privileged: true
     restart: always
     volumes:
@@ -25,7 +31,10 @@ services:
       - adbd
     ports:
       - "7100:7100"
+      - "7110:7110"
+      - "7120:7120"
+      - "7400-7500:7400-7500"
     environment:
       - RETHINKDB_PORT_28015_TCP=tcp://rethinkdb:28015"
     restart: always
-    command: stf local --allow-remote --public-ip 127.0.0.1 --adb-host adbd
+    command: stf local --allow-remote --public-ip 192.168.1.234 --provider-min-port 7400 --provider-max-port 7500 --adb-host adbd
