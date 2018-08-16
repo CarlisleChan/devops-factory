@@ -1,0 +1,41 @@
+version: '2'
+services:
+  rethinkdb:
+    container_name: rethinkdb
+    image: modul8com/rethinkdb-armv7-rpi2
+    ports:
+      - "8080:8080"
+      - "28015:28015"
+      - "29015:29015"
+    restart: always
+    volumes:
+      - ./data/srv/rethinkdb:/data
+    command: rethinkdb --bind all --cache-size 1024
+
+  adbd:
+    container_name: adbd
+    image: sorccu/adb
+    privileged: true
+    ports:
+      - "5037:5037"
+    privileged: true
+    restart: always
+    volumes:
+      # - ~/.android/adbkey:/root/.android/adbkey
+      - ./data/dev/bus/usb:/dev/bus/usb
+
+  stf-local:
+    container_name: stf-local
+    image:  openstf/stf-armv7l
+    links:
+      - rethinkdb
+      - adbd
+    ports:
+      - "7100:7100"
+      - "7110:7110"
+      - "7120:7120"
+      - "7400-7500:7400-7500"
+    environment:
+      - RETHINKDB_PORT_28015_TCP=tcp://rethinkdb:28015"
+    restart: always
+    command: stf local --allow-remote --public-ip 192.168.1.234 --provider-min-port 7400 --provider-max-port 7500 --adb-host adbd
