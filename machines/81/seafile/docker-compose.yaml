@@ -1,0 +1,14 @@
+version: '2'
+
+services:
+  seafile:  
+    image: seafileltd/seafile:latest
+    ports:
+      - 2333:80
+    environment:
+      - SEAFILE_SERVER_HOSTNAME=127.0.0.1
+      - SEAFILE_ADMIN_EMAIL=duziyixiangsi@gmail.com
+      - SEAFILE_ADMIN_PASSWORD=Aa111111
+    volumes:
+      - ./opt/seafile-data:/shared
+    restart: always
