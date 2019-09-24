@@ -4,7 +4,7 @@ services:
     container_name: jenkins
     image: jenkins:2.46.1
     ports:
-      - "9393:8080"
+      - "8181:8080"
     restart: always
     volumes:
       - ./data/var/jenkins:/var/jenkins_home

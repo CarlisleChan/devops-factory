@@ -4,5 +4,5 @@ services:
     container_name: mobsf
     image: opensecurity/mobile-security-framework-mobsf:latest
     ports:
-      - "8000:8000"
+      - "8282:8000"
     restart: always

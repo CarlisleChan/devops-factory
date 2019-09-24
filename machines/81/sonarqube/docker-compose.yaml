@@ -4,7 +4,7 @@ services:
     container_name: mysql
     image: mysql:5.7.16
     ports:
-      - "9494:3306"
+      - "3306:3306"
     restart: always
     volumes:
       - ./data/var/lib/mysql:/var/lib/mysql
@@ -18,7 +18,7 @@ services:
     links:
       - mysql
     ports:
-      - "9595:9000"
+      - "9000:9000"
     restart: always
     volumes:
       - ./data/var/lib/sonarqube:/var/lib/postgresql
