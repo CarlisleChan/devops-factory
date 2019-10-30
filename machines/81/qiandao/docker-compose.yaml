@@ -1,0 +1,10 @@
+version: '2'
+services:
+  qiandao:
+    image: fangzhengjin/qiandao:latest
+    container_name: qiandao
+    restart: always
+    ports:
+      - "8000:80"
+    volumes:
+      - ./data/volume:/usr/src/app/volume
