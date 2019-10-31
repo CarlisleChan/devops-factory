@@ -8,4 +8,4 @@ services:
     ports:
       - 3001:3001
     volumes:
-      - ./store:/opt/work/store
+      - /volume1/docker/qiandao/data:/opt/work/store

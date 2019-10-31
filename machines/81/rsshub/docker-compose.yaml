@@ -1,7 +1,5 @@
 version: '3'
-
 services:
-
   service.rsshub:
     image: diygod/rsshub
     restart: always
@@ -15,16 +13,13 @@ services:
     depends_on:
       - db.redis
       - service.browserless
-
   service.browserless:
     image: browserless/chrome
     restart: always
-
   db.redis:
     image: redis
     restart: always
     volumes:
         - redis-data:/data
-
 volumes:
   redis-data:
