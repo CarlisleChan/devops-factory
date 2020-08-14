@@ -6,5 +6,5 @@ services:
     restart: always
     command: daemon
     volumes:
-      - ./ssl:/acme.sh
+      - ./data/ssl:/acme.sh
     network_mode: host

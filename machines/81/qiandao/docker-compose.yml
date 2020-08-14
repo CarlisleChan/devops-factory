@@ -1,4 +1,4 @@
-version: '2'
+version: '3'
 services:
   qiandao:
     image: fangzhengjin/qiandao:latest
@@ -7,4 +7,4 @@ services:
     ports:
       - "8000:80"
     volumes:
-      - /volume1/docker/qiandao/data:/usr/src/app/volume
+      - ./data:/usr/src/app/volume

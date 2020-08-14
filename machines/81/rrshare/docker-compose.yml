@@ -1,5 +1,4 @@
 version: '2'
-
 services:
   rrshare:
     image: leontius/rrshareweb:latest
@@ -8,4 +7,4 @@ services:
     ports:
       - 3001:3001
     volumes:
-      - /volume1/docker/qiandao/data:/opt/work/store
+      - ./data:/opt/work/store

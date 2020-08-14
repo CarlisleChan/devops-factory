@@ -1,0 +1,8 @@
+version: '3'
+services:
+  peerjs:
+    image: peerjs/peerjs-server
+    container_name: peerjs
+    restart: always
+    ports:
+      - 9000:9000
