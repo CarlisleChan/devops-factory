@@ -1,0 +1,14 @@
+version: "3"
+services:
+  shiori:
+    container_name: shiori
+    image: radhifadlillah/shiori:latest
+    ports:
+      - "8003:8080/tcp"
+    environment:
+      TZ: 'Asia/Shanghai'
+    volumes:
+      - shiori:/srv/shiori
+    restart: unless-stopped
+volumes:
+  shiori:
