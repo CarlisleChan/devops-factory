@@ -1,0 +1,8 @@
+version: '2'
+services:
+  battery-historian:
+    container_name: android-battery-historian
+    image: gcr.io/android-battery-historian/stable:3.0
+    ports:
+      - "9999:9999"
+    restart: always
