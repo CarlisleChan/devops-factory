@@ -13,5 +13,5 @@ services:
     extra_hosts:
       - "smtp.exmail.qq.com:163.177.90.125"
     volumes:
-      - ./data:/opt/zbox/
+      - ./data/zbox:/opt/zbox/
     restart: always

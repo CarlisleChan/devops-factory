@@ -9,7 +9,7 @@ services:
       - "29015:29015"
     restart: always
     volumes:
-      - ./data/srv/rethinkdb:/data
+      - ./data/rethinkdb:/data
     command: rethinkdb --bind all --cache-size 1024
 
   adbd:
@@ -21,7 +21,7 @@ services:
     restart: always
     volumes:
       # - ~/.android/adbkey:/root/.android/adbkey
-      - ./data/dev/bus/usb:/dev/bus/usb
+      - ./data/usb:/dev/bus/usb
 
   stf-local:
     container_name: stf-local

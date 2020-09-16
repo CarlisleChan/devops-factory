@@ -8,12 +8,12 @@ services:
       - 1883:1883
       - 8883:8883
     volumes:
-      - mosquitto-data:/mosquitto/data
-      - mosquitto-logs:/mosquitto/logs
-      - mosquitto-conf:/mosquitto/config
+      - ./data/data:/mosquitto/data
+      - ./data/logs:/mosquitto/logs
+      - ./data/conf:/mosquitto/config
     restart: unless-stopped
 
 volumes:
-  mosquitto-data:
-  mosquitto-logs:
-  mosquitto-conf:
+  data:
+  logs:
+  conf:

@@ -7,4 +7,4 @@ services:
     ports:
       - 3001:3001
     volumes:
-      - ./data:/opt/work/store
+      - ./data/store:/opt/work/store

@@ -7,4 +7,4 @@ services:
     ports:
       - "8000:80"
     volumes:
-      - ./data:/usr/src/app/volume
+      - ./data/volume:/usr/src/app/volume

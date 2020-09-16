@@ -4,8 +4,8 @@ services:
     image: "wiznote/wizserver"
     container_name: "wiz"
     volumes: 
-      - "wizdata:/wiz/storage"
-      - "/etc/localtime:/etc/localtime"
+      - ./data/storage:/wiz/storage
+      - ./data/localtime:/etc/localtime
     ports: 
       - "80:80"
     environment: 

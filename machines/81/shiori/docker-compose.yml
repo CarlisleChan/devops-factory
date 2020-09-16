@@ -8,7 +8,7 @@ services:
     environment:
       TZ: 'Asia/Shanghai'
     volumes:
-      - shiori:/srv/shiori
+      - ./data/shiori:/srv/shiori
     restart: unless-stopped
 volumes:
   shiori:
