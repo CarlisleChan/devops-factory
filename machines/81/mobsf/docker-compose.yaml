@@ -1,6 +1,6 @@
 version: '2'
 services:
-  jenkins:
+  mobsf:
     container_name: mobsf
     image: opensecurity/mobile-security-framework-mobsf:latest
     ports:

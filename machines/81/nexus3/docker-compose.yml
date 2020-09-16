@@ -1,6 +1,6 @@
 version: '2'
 services:
-  battery-historian:
+  nexus3:
     container_name: nexus3
     image: sonatype/nexus3
     ports:

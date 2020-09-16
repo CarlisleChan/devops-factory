@@ -1,0 +1,8 @@
+version: '2'
+services:
+  kms:
+    container_name: kms
+    image: teddysun/kms
+    ports:
+      - "1688:1688"
+    restart: always
