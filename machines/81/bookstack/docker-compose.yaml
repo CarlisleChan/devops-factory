@@ -1,6 +1,7 @@
 version: '2'
 services:
   mysql:
+    container_name: bookstack_mysql
     image: mysql:5.7.31
     environment:
     - MYSQL_ROOT_PASSWORD=secret
@@ -11,6 +12,7 @@ services:
     - ./data/mysql:/var/lib/mysql
 
   bookstack:
+    container_name: bookstack
     image: solidnerd/bookstack:0.29.3
     depends_on:
     - mysql
